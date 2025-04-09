@@ -188,7 +188,7 @@ def main():
     # Update the record with the latest and greatest IP
     if not record_dict["answer"] == ipify_resp_dict["ip"]:
         logging.info("IP address changed, updating.")
-        record_url_path = "/v4/domains/{}/records/{}".format(args.domain, args.recordid)
+        record_url_path = "/v4/domains/{}/records/{}".format(record_dict["domainName"], record_dict["id"])
         record_data_dict = {
             "type": args.recordtype,
             "answer": ipify_resp_dict["ip"]
